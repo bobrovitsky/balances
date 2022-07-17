@@ -8,9 +8,9 @@ import (
 
 func TestHasOption(t *testing.T) {
 
-	require.True(t, (VIRTUAL | PASSIVE).IsPassive())
-	require.True(t, (VIRTUAL | PASSIVE).IsVirtual())
+	require.True(t, (VIRTUAL | PASSIVE).isPassive())
+	require.True(t, (VIRTUAL | PASSIVE).isVirtual())
 
-	require.False(t, (VIRTUAL | PASSIVE).IsSyncable())
-	require.False(t, (VIRTUAL | PASSIVE).IsActive())
+	require.False(t, (VIRTUAL | PASSIVE).isSyncable())
+	require.False(t, (VIRTUAL | PASSIVE).isActive())
 }

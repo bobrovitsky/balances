@@ -1,27 +1,27 @@
 package balances
 
-type Opts uint8
+type opts uint8
 
 const DEFAULT = 0
 
 const (
-	VIRTUAL Opts = 1 << iota
+	VIRTUAL opts = 1 << iota
 	PASSIVE
 	SYNCABLE
 )
 
-func (o Opts) IsVirtual() bool {
+func (o opts) isVirtual() bool {
 	return (o & VIRTUAL) != 0
 }
 
-func (o Opts) IsPassive() bool {
+func (o opts) isPassive() bool {
 	return (o & PASSIVE) != 0
 }
 
-func (o Opts) IsActive() bool {
+func (o opts) isActive() bool {
 	return (o & PASSIVE) == 0
 }
 
-func (o Opts) IsSyncable() bool {
+func (o opts) isSyncable() bool {
 	return (o & SYNCABLE) != 0
 }
